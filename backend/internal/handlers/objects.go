@@ -176,7 +176,6 @@ func (h *ObjectHandler) GetObject(c fiber.Ctx) error {
 			models.ErrorResponse(models.ErrCodeObjectNotFound, "Object not found: "+err.Error()),
 		)
 	}
-	defer body.Close()
 
 	// Set response headers
 	c.Set("Content-Type", objectInfo.ContentType)
